@@ -1,21 +1,17 @@
 const express = require("express");
-const expressLayout = require('express-ejs-layouts');
-const router = require("./routes/main");
+const connectDB = require("./database/mongodb.js");
+const blogRouter = require("./routes/blog.routes.js");
+const errorMiddleware = require("./middleware/error.middleware.js");
 
 const app = express();
 
-const PORT = 5000 || process.env.PORT;
+const PORT = 6500;
 
-app.use(express.static('public'))
+app.use(errorMiddleware);
 
-//Template engine
-app.use(expressLayout)
-app.set("layout", './layouts/main')
-app.set('view engine', 'ejs')
+app.use("/api/v1/blogs", blogRouter);
 
-app.use('', router)
-
-app.listen(PORT, () => {
-  console.log(`App is running on http://localhost:${5000}`);
+app.listen(PORT, async () => {
+  console.log(`App is listening of http://localhost:${PORT}`);
+  await connectDB();
 });
-
