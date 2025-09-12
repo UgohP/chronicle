@@ -2,8 +2,12 @@ const mongoose = require("mongoose");
 
 const BlogSchema = new mongoose.Schema(
   {
+    image: {
+      type: String,
+    },
     title: {
       type: String,
+      trim: true,
       required: [true, "Blog title is required"],
     },
     body: {

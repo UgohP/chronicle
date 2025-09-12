@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const MONGODB_URI = require("../config/env.js");
+const { MONGODB_URI } = require("../config/env.js");
 
 if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI variable inside .env file");
@@ -15,4 +15,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB
+module.exports = connectDB;
