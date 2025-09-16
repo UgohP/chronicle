@@ -50,11 +50,15 @@ JWT_SECRET=your_jwt_secret
 npm run dev
 ```
 
+
 API runs on:
 👉 http://localhost:6500/api
 
+---
+
 ## 📌 API Endpoints
-### 🔑 Auth
+
+## 🔑 Auth
 
 POST **/api/v1/auth/signup** – Register user
 
@@ -72,9 +76,10 @@ PUT **/api/v1/blogs/:id** – Update blog by ID (auth required)
 
 DELETE **/api/v1/blogs/:id** – Delete blog by ID (auth required)
 
-### ✅ Example Blog Schema
-
 ---
+
+## ✅ Example Blog Schema
+
 
 ```bash
 {
@@ -84,4 +89,5 @@ DELETE **/api/v1/blogs/:id** – Delete blog by ID (auth required)
   "status": "published",
   "image": "https://s3.amazonaws.com/chronicle/blog1.png"
 }
+
 ```
