@@ -10,8 +10,7 @@ It allows users to create, read, update, and delete blog posts, with support for
 - 📝 **CRUD for Blogs** – Create, read, update, delete blog posts  
 - 🔗 **Slug Support** – SEO-friendly blog URLs  
 - ⏱ **Timestamps** – Auto-generated `createdAt` and `updatedAt`  
-- 📄 **Scalable Structure** – Separation of controllers, routes, and models  
-- 🔍 **Extendable** – Ready for comments, likes, categories, tags, and image upload (via S3/Cloudinary)  
+- 📄 **Scalable Structure** – Separation of controllers, routes, and models   
 
 ---
 
@@ -22,21 +21,8 @@ It allows users to create, read, update, and delete blog posts, with support for
 - **Environment Management**: dotenv  
 - **Validation**: Mongoose schema validators  
 
----
-
-## 📂 Project Structure
-chronicle/
-├── config/ # DB connection, cloud config
-├── controllers/ # Request handlers (business logic)
-├── models/ # Mongoose schemas
-├── routes/ # API routes
-├── middlewares/ # Custom middleware (auth, error handling)
-├── server.js # Entry point
-└── .env # Environment variables
-
 
 ---
-
 ## ⚡ Getting Started
 
 ### 1️⃣ Clone the repository
@@ -51,7 +37,7 @@ npm install
 ```
 ### 3️⃣ Setup environment variables
 
-Create a *.env.<production/development>.local* file in the root:
+Create a **.env.<production/development>.local** file in the root:
 
 ```bash
 PORT=6500
@@ -88,11 +74,13 @@ DELETE **/api/v1/blogs/:id** – Delete blog by ID (auth required)
 
 ### ✅ Example Blog Schema
 
+---
+
 ```bash
 {
   "title": "My First Blog",
   "body": "This is the body of the blog",
-  "tags": "["tech", "nodejs"]"
+  "tags": ["tech", "nodejs"],
   "status": "published",
   "image": "https://s3.amazonaws.com/chronicle/blog1.png"
 }
