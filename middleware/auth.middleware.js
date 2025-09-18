@@ -16,7 +16,7 @@ const authorize = async (req, res, next) => {
     if (!token) {
       return res
         .status(401)
-        .json({ success: true, message: "No token authorization" });
+        .json({ success: false, message: "No token authorization" });
     }
 
     let decoded = jwt.verify(token, JWT_SECRET);
